@@ -17,9 +17,18 @@ class Titulo(models.Model):
     rating = models.ForeignKey('Rating', on_delete=models.CASCADE, null=True)
     genero = models.ForeignKey('Genero', on_delete=models.CASCADE, null=True)
 
+    def __str__(self):
+        return f"{self.nombre} - {self.ano_lanzamiento}"
+
 class Rating(models.Model):
     rating = models.IntegerField()
 
+    def __str__(self):
+        return f"{self.rating}"
 
 class Genero(models.Model):
     genero = models.CharField(max_length=150)
+
+    def __str__(self):
+        return f"{self.genero}"
+
