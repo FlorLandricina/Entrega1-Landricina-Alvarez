@@ -3,9 +3,9 @@
 {% block contenido_base %}
 
 <br><br>
-<h3> Cursos Filtrados </h3>
+<h3>Titulos Filtrados:</h3>
 
-{% if titulos %}
+{% if Peliculas %}
 
 
 {% for titulo in titulo %}
@@ -14,7 +14,7 @@
 {% endfor %}
 
 {% else %}
-<h4>No hay cursos con esa busqueda</h4>
+<h4>No hay titulos con ese nombre</h4>
 {% endif %}
 
 {% endblock contenido_base %}

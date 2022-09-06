@@ -34,8 +34,8 @@ def busqueda_titulo(request):
 
 
 def buscar(request):
-    if request.GET['titulo']:
-        titulo = request.GET['titulo']
+    if request.GET["titulo"]:
+        titulo = request.GET["titulo"]
         peliculas = Titulo.objects.filter(titulo__icontains=titulo)
         return render(request,"app_movies/titulos_list.html",{"titulo":listar_titulos})
     else:
