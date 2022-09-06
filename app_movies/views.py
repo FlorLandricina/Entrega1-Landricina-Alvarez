@@ -13,7 +13,6 @@ def inicio(request):
 def listar_titulos(request):
     listar_titulos = Titulo.objects.all()
     print(listar_titulos)
-
     return render(request,"app_movies/titulos_list.html",{"titulo":listar_titulos})
 
 
@@ -21,7 +20,7 @@ def formulario_titulo(request):
     if request.method == 'POST':
         formulario = TituloFormulario(request.POST)
 
-        if formulario.is_valid:
+        if formulario.is_valid():
             data = formulario.cleaned_data
             titulo = Titulo(nombre=data['nombre'], ano_lanzamiento=data['ano_lanzamiento'], rating=data['rating'], genero= data['genero'] )
             titulo.save()

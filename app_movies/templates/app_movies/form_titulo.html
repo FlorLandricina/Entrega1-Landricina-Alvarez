@@ -2,7 +2,7 @@
 
 {% block contenido_base %}
 
-<form action="crear-titulo/" method = 'post'>
+<form method = 'post'>
   {% csrf_token %}
   {{formulario.as_p}}
   <input type="submit" value = 'Enviar' />

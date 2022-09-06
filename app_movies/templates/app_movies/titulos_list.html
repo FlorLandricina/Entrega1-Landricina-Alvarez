@@ -28,6 +28,15 @@
 
             </tbody>
         </table>
-<a href="{% url 'formulario_titulo' %}">Crear Titulo!</a>
+<br>
+       <h3> <a href="{% url 'formulario_titulo' %}">Crear Titulo!</a> </h3>
+<br>
+<br>
+<h3> Todas las Peliculas </h3>
+{% for titulo in titulo %}
+<br>
+<span>{{titulo.nombre}}</span>
+{% endfor %}
+
 
 {% endblock contenido_base %}
