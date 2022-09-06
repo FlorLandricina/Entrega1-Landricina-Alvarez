@@ -1,0 +1,20 @@
+{% extends "app_movies/plantilla_base.html" %}
+
+{% block contenido_base %}
+
+<br><br>
+<h3> Cursos Filtrados </h3>
+
+{% if titulos %}
+
+
+{% for titulo in titulo %}
+<br>
+<span>{{titulo.nombre}}</span>
+{% endfor %}
+
+{% else %}
+<h4>No hay cursos con esa busqueda</h4>
+{% endif %}
+
+{% endblock contenido_base %}

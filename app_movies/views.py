@@ -28,3 +28,15 @@ def formulario_titulo(request):
     else:
         formulario = TituloFormulario()
     return render(request, "app_movies/form_titulo.html", {'formulario': formulario})
+
+def busqueda_titulo(request):
+    return render(request, "app_movies/form_busqueda_titulo.html")
+
+
+def buscar(request):
+    if request.GET['titulo']:
+        titulo = request.GET['titulo']
+        peliculas = Titulo.objects.filter(titulo__icontains=titulo)
+        return render(request,"app_movies/titulos_list.html",{"titulo":listar_titulos})
+    else:
+        return render(request,"app_movies/titulos_list.html",{"titulo":[]})
